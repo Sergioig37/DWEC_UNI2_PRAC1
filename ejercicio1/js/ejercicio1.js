@@ -23,7 +23,6 @@ function separarPalabras(frase, separador){
      for(var i=0;i<palabras.length;i++){
          cadena = palabras[i];
         for(var j=cadena.length-1;j>=0;j--){
-            
             if(j==0){
                 letras.push(cadena.charAt(j));
                 letras.push(" ");
