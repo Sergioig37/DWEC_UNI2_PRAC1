@@ -1,3 +1,7 @@
+
+const MAX = 99999;
+const MIN = 0;
+
 function pedirNumero(){
 
     var cantidadNumeros = prompt("Cuántos décimos quieres generar ? ");
@@ -12,17 +16,20 @@ function pedirNumero(){
 function comprobarGanador(numeros, min, max){
 
     var encontrado = false;
+    var numerosGenerados = 0;
 
     while(encontrado!=true){
         var numero = generarAleatorio(min, max);
         for(var i=0; i<numeros.length;i++){
+            numerosGenerados += 1;
             if(numeros[i]==numero){
                 encontrado = true;
                 break;
             }
         }
     }
-    console.log("Número encontrado, enhorabuena"+numeros[i]);
+    console.log("Número encontrado: "+ numeros[i]+ " ¡¡¡Enhorabuena!!! ");
+    console.log("Se generaron "+numerosGenerados + " antes de encontrarlo ");
 
 }
 
@@ -73,4 +80,4 @@ function generarNAleatorios(cantidad, min, max){
 }
 
 
-comprobarGanador(generarNAleatorios(pedirNumero(), 0, 9), 0, 9);
+comprobarGanador(generarNAleatorios(pedirNumero(), MIN, MAX), MIN, MAX);

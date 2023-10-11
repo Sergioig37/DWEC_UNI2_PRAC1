@@ -36,11 +36,9 @@ function separarPalabras(frase, separador){
 }
 
 function girarPalabras(arrayNormal){
-
    var textoInverso = "";
    textoInverso += arrayNormal.join("");
     console.log(textoInverso);
-
 }
 
 
