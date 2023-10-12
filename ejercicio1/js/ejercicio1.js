@@ -1,7 +1,5 @@
 
 function pedirFrase(){
-    
-    
     do{
         var frase = prompt("Escribe la palabra o frase a la que quieras dar la vuelta"+"\n" +"Escribe ESC o esc para salir del prograna ");
         if(frase!=="esc"&&frase!=="ESC"){
