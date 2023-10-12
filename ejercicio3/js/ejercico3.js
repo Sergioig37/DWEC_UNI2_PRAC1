@@ -1,12 +1,14 @@
-const SIMBOLOS = ["1", "X", "2"]
-const quiniela = [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "," ", " ", " ", " ", " ", " ", " ", " ", " ", " ",];
+const SIMBOLOS = ["1", "X", "2"];
+const quiniela = [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "," ", " ", " ", " ", " ", " ", " ", " ", " ", " "];
 
 const EQUIPOS = ["Alavés", "Atl Madrid", "Villareal", "Barcelona", "Real Madrid", "Getafe", "Espanyol", "Málaga", "Sevilla", "Levante", "Valencia", "Betis", "Celta", "Atl Bilbao", "Real Sociedad", "Rayo Vallecano", "Osasuna", "Mallorca", "Cádiz", "Granada"];
 
 
 function generarSimbolo() {
 
-    return SIMBOLOS[Math.random() * 2];
+    var simbolo =  SIMBOLOS[Math.floor(Math.random() * 3)];
+
+    return simbolo;
 
 }
 
@@ -23,25 +25,21 @@ function muestraEquipos(EQUIPOS) {
 
 function generarResultados( quiniela){
 
-    var quinielita = new Array(quiniela.length);
-
-    for(let i=0;i<quiniela.length;i++){
-        quinielita[i] = quiniela;
-    }
-
-
-    for(let i=0; i<quinielita.length;i++){
-        for(let j=0;j<quinielita.length; j++){
-            if(i==j){
-                quinielita[i][j] = "-";
-            }
-            else{
-                quinielita[i][j] += generarSimbolo();
+        var quinielita = new Array(quiniela.length);
+    
+        for (let i = 0; i < quiniela.length; i++) {
+            quinielita[i] = new Array(quiniela.length);
+            for (let j = 0; j < quiniela.length; j++) {
+                if (i === j) {
+                    quinielita[i][j] = "-";
+                } else {
+                    quinielita[i][j] = generarSimbolo();
+                }
             }
         }
-    }
-    console.table(quinielita);
-
+    
+        console.table(quinielita);
+    
 }
 
 function quinielas(EQUIPOS){
